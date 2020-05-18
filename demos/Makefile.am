@@ -1,7 +1,7 @@
 ## Makefile.am for gtk+/demos
 include $(top_srcdir)/Makefile.decl
 
-SUBDIRS = gtk-demo widget-factory icon-browser
+SUBDIRS = widget-factory
 
 EXTRA_DIST = \
 	meson.build

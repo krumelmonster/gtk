@@ -1653,7 +1653,7 @@ endif
 #
 bin_PROGRAMS = \
 	gtk-query-immodules-3.0	\
-	gtk-update-icon-cache \
+	 \
 	gtk-encode-symbolic-svg \
 	gtk-builder-tool \
 	gtk-query-settings \
@@ -1698,18 +1698,18 @@ if OS_WIN32
 # Workaround for UAC silliness: programs with "update" in their name
 # are believed to be installers and require elevated privileges to be
 # used... Embed a manifest file into executable to tell Windows that
-# gtk-update-icon-cache.exe doesn't require any special privileges.
+# .exe doesn't require any special privileges.
 
-GTK_UPDATE_ICON_CACHE_MANIFEST = gtk-update-icon-cache.exe.manifest
-GTK_UPDATE_ICON_CACHE_RC = gtk-update-icon-cache.rc
-GTK_UPDATE_ICON_CACHE_MANIFEST_OBJECT = gtk-update-icon-cache_manifest.o
+GTK_UPDATE_ICON_CACHE_MANIFEST = .exe.manifest
+GTK_UPDATE_ICON_CACHE_RC = .rc
+GTK_UPDATE_ICON_CACHE_MANIFEST_OBJECT = _manifest.o
 
 $(GTK_UPDATE_ICON_CACHE_MANIFEST):
 	(echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' ; \
 	 echo '<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">' ; \
 	 echo '  <assemblyIdentity version="1.0.0.0"' ; \
 	 echo '     processorArchitecture="'$(EXE_MANIFEST_ARCHITECTURE)'"' ; \
-	 echo '     name="gtk-update-icon-cache.exe"' ; \
+	 echo '     name=".exe"' ; \
 	 echo '     type="win32"/>' ; \
 	 echo '  <!-- Identify the application security requirements. -->' ; \
 	 echo '  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">' ; \
